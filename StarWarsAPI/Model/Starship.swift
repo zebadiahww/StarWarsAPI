@@ -9,7 +9,7 @@
 import Foundation
 
 struct TopLevelDectionary: Codable {
-    let starships: [Starship]
+    let results: [Starship]
 }
 
 struct Starship: Codable {

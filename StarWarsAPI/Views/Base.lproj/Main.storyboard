@@ -48,7 +48,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="F7a-B4-aKp"/>
                     <connections>
-                        <outlet property="starshipCell" destination="VwK-hz-emM" id="rS0-dJ-YBF"/>
                         <outlet property="starshipSearchBar" destination="R5h-gp-50Q" id="qRe-zJ-JJM"/>
                     </connections>
                 </tableViewController>
@@ -159,7 +158,6 @@
                     <navigationItem key="navigationItem" id="el0-EN-rmd"/>
                     <connections>
                         <outlet property="costCell" destination="lYT-89-zKk" id="PRT-Cc-1Pv"/>
-                        <outlet property="filmCell" destination="FXj-cR-Yav" id="0os-iD-6Q5"/>
                         <outlet property="modelLabel" destination="qMM-jI-u48" id="cMT-XO-Dah"/>
                         <outlet property="nameLabel" destination="vyG-Mn-hUz" id="3hZ-IZ-IYt"/>
                         <outlet property="speedLabel" destination="4hA-qM-vU8" id="1E6-ns-dWC"/>

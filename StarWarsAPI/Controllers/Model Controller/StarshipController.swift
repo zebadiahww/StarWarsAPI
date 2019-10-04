@@ -10,6 +10,8 @@ import Foundation
 
 class StarshipController {
     
+    static let shared = StarshipController()
+    
     let baseURL = URL(string: StarshipConstants.baseURL)
     
     func fetchStarships(with searchTerm: String, completion: @escaping ([Starship]) -> Void) {
@@ -28,12 +30,13 @@ class StarshipController {
         let dataTask = URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
                 print("error")
+                return
             }
             
             guard let data = data else { completion([]); return }
             do {
                 let decodedwhatever = try JSONDecoder().decode(TopLevelDectionary.self, from: data)
-                completion(decodedwhatever.starships)
+                completion(decodedwhatever.results)
             } catch {
                 completion([])
             }
@@ -49,6 +52,7 @@ class StarshipController {
         let filmRequest = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print("error")
+                return
             }
             
             guard let data = data else { completion(nil); return }

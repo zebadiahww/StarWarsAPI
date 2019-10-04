@@ -9,44 +9,63 @@
 import UIKit
 
 class StarshipListTableViewController: UITableViewController {
-
+    
     // outlet
     @IBOutlet var starshipSearchBar: UITableView!
-    @IBOutlet weak var starshipCell: UITableViewCell!
+    
+    var starships: [Starship] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
+        starshipSearchBar.delegate = self
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return starships.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipCell", for: indexPath)
+        
+        let starship = starships[indexPath.row]
+        cell.textLabel?.text = starship.name
+        
         return cell
     }
     
-
- 
-
-    /*
+    
+    
+    
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toDetailVC" {
+            guard let indexPathForCell = tableView.indexPathForSelectedRow, let destination = segue.destination as? StarshipDetailTableViewController else { return }
+            
+            let starship = starships[indexPathForCell.row]
+            
+            destination.starship = starship
+        }
     }
-    */
+    
+}// End Of Class
 
+extension StarshipListTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        StarshipController.shared.fetchStarships(with: searchText) { (starships) in
+            self.starships = starships
+        }
+        
+    }
 }
