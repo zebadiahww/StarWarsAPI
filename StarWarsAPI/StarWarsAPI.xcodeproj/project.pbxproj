@@ -14,6 +14,9 @@
 		8561A0022346BB6400735F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8561A0002346BB6400735F9F /* LaunchScreen.storyboard */; };
 		85F10FE52346BE120048EEF8 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F10FE42346BE120048EEF8 /* Starship.swift */; };
 		85F10FE72346C2E00048EEF8 /* StarshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F10FE62346C2E00048EEF8 /* StarshipController.swift */; };
+		85F10FE92346C49E0048EEF8 /* StarshipListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F10FE82346C49E0048EEF8 /* StarshipListTableViewController.swift */; };
+		85F10FEB2346C5A70048EEF8 /* StarshipDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F10FEA2346C5A70048EEF8 /* StarshipDetailTableViewController.swift */; };
+		85F10FEE2346C8850048EEF8 /* StarshipConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F10FED2346C8850048EEF8 /* StarshipConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		8561A0032346BB6400735F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F10FE42346BE120048EEF8 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		85F10FE62346C2E00048EEF8 /* StarshipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipController.swift; sourceTree = "<group>"; };
+		85F10FE82346C49E0048EEF8 /* StarshipListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipListTableViewController.swift; sourceTree = "<group>"; };
+		85F10FEA2346C5A70048EEF8 /* StarshipDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailTableViewController.swift; sourceTree = "<group>"; };
+		85F10FED2346C8850048EEF8 /* StarshipConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 				85F10FE12346BBD70048EEF8 /* Controllers */,
 				85F10FE02346BBC90048EEF8 /* Model */,
 				8561A00A2346BB9D00735F9F /* Views */,
+				85F10FEC2346C8680048EEF8 /* Helpers */,
 				85619FF42346BB6300735F9F /* StarWarsAPI */,
 				85619FF32346BB6300735F9F /* Products */,
 			);
@@ -114,8 +121,18 @@
 		85F10FE32346BBF10048EEF8 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				85F10FE82346C49E0048EEF8 /* StarshipListTableViewController.swift */,
+				85F10FEA2346C5A70048EEF8 /* StarshipDetailTableViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		85F10FEC2346C8680048EEF8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85F10FED2346C8850048EEF8 /* StarshipConstants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F10FE92346C49E0048EEF8 /* StarshipListTableViewController.swift in Sources */,
+				85F10FEE2346C8850048EEF8 /* StarshipConstants.swift in Sources */,
 				85F10FE52346BE120048EEF8 /* Starship.swift in Sources */,
+				85F10FEB2346C5A70048EEF8 /* StarshipDetailTableViewController.swift in Sources */,
 				85F10FE72346C2E00048EEF8 /* StarshipController.swift in Sources */,
 				85619FF62346BB6300735F9F /* AppDelegate.swift in Sources */,
 				85619FF82346BB6300735F9F /* SceneDelegate.swift in Sources */,
